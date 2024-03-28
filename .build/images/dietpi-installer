@@ -17,7 +17,7 @@
 	# - G_RASPBIAN
 	#
 	# The following environment variables can be set to automate this script (adjust example values to your needs):
-	# - GITOWNER='MichaIng'			(optional, defaults to 'MichaIng')
+	# - GITOWNER='ProfXa'			(optional, defaults to 'MichaIng')
 	# - GITBRANCH='master'
 	# - IMAGE_CREATOR='Mr. Tux'
 	# - PREIMAGE_INFO='Some GNU/Linux'
