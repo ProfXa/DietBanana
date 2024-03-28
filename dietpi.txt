@@ -325,7 +325,7 @@ SOFTWARE_URBACKUP_BACKUPPATH=/mnt/dietpi_userdata/urbackup
 ##### Dev settings #####
 #------------------------------------------------------------------------------------------------------
 DEV_GITBRANCH=master
-DEV_GITOWNER=MichaIng
+DEV_GITOWNER=ProfXa
 
 #------------------------------------------------------------------------------------------------------
 ##### Settings, automatically added by dietpi-update #####
