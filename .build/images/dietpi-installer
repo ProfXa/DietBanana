@@ -119,7 +119,7 @@ _EOF_
 	unset -v aAPT_PREREQS
 
 	# Set Git owner
-	GITOWNER=${GITOWNER:-MichaIng}
+	GITOWNER=${GITOWNER:-ProfXa}
 
 	# Select Git branch
 	if [[ ! $GITBRANCH ]]
