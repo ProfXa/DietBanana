@@ -144,7 +144,7 @@ _EOF_
 	#------------------------------------------------------------------------------------------------
 	# NB: We have to manually handle errors, until DietPi-Globals are successfully loaded.
 	# Download
-	if ! curl -sSf "https://raw.githubusercontent.com/$GITOWNER/DietPi/$GITBRANCH/dietpi/func/dietpi-globals" -o dietpi-globals
+	if ! curl -sSf "https://raw.githubusercontent.com/$GITOWNER/DietBanana/$GITBRANCH/dietpi/func/dietpi-globals" -o dietpi-globals
 	then
 		echo -e '[FAILED] Unable to download dietpi-globals. Aborting...\n'
 		exit 1
@@ -578,7 +578,7 @@ _EOF_
 		G_DIETPI-NOTIFY 3 "$G_PROGRAM_NAME" "[$SETUP_STEP] Downloading and installing DietPi source code"; ((SETUP_STEP++))
 		#------------------------------------------------------------------------------------------------
 
-		G_EXEC_DESC='Downloading source code' G_EXEC curl -sSfLO "https://github.com/$G_GITOWNER/DietPi/archive/$G_GITBRANCH.tar.gz"
+		G_EXEC_DESC='Downloading source code' G_EXEC curl -sSfLO "https://github.com/$G_GITOWNER/DietBanana/archive/$G_GITBRANCH.tar.gz"
 		[[ -d DietPi-$G_GITBRANCH ]] && G_EXEC_DESC='Removing old source code' G_EXEC rm -R "DietPi-$G_GITBRANCH"
 		G_EXEC_DESC='Unpacking source code' G_EXEC tar xf "$G_GITBRANCH.tar.gz"
 		G_EXEC_DESC='Removing unused files' G_EXEC rm -f "$G_GITBRANCH.tar.gz" "DietPi-$G_GITBRANCH/dietpi/"{pre-patch_file,patch_file,server_version-6}
