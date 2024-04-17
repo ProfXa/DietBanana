@@ -582,7 +582,7 @@ _EOF_
 		[[ -d DietPi-$G_GITBRANCH ]] && G_EXEC_DESC='Removing old source code' G_EXEC rm -R "DietPi-$G_GITBRANCH"
 		G_EXEC_DESC='Unpacking source code' G_EXEC tar xf "$G_GITBRANCH.tar.gz"
 		G_EXEC_DESC='Removing unused files' G_EXEC rm -f "$G_GITBRANCH.tar.gz" "DietPi-$G_GITBRANCH/dietpi/"{pre-patch_file,patch_file,server_version-6}
-		G_EXEC_DESC='Hardening source code mode' G_EXEC chmod -R g-w "DietPi-$G_GITBRANCH"
+		G_EXEC_DESC='Hardening source code mode' G_EXEC chmod -R g-w "DietBanana-$G_GITBRANCH"
 
 		[[ -d '/boot' ]] || G_EXEC mkdir /boot
 
@@ -768,20 +768,20 @@ setenv rootuuid "true"' /boot/boot.cmd
 		# shellcheck disable=SC2016
 		[[ -f '/etc/initramfs/post-update.d/99-dietpi-uboot' && $(findmnt -t vfat -M /boot) ]] && G_EXEC sed --follow-symlinks -i '/^ln -s/c\mv -v "/boot/uInitrd-$1" /boot/uInitrd' /etc/initramfs/post-update.d/99-dietpi-uboot # FAT does not support symlinks
 
-		G_EXEC mv "DietPi-$G_GITBRANCH/dietpi.txt" /boot/
-		G_EXEC mv "DietPi-$G_GITBRANCH/README.md" /boot/dietpi-README.md
-		G_EXEC mv "DietPi-$G_GITBRANCH/LICENSE" /boot/dietpi-LICENSE.txt
+		G_EXEC mv "DietBanana-$G_GITBRANCH/dietpi.txt" /boot/
+		G_EXEC mv "DietBanana-$G_GITBRANCH/README.md" /boot/dietpi-README.md
+		G_EXEC mv "DietBanana-$G_GITBRANCH/LICENSE" /boot/dietpi-LICENSE.txt
 
 		# Reading version string for later use
 		# shellcheck source=.update/version source=/boot/dietpi/.version
-		. "DietPi-$G_GITBRANCH/.update/version"
+		. "DietBanana-$G_GITBRANCH/.update/version"
 		G_DIETPI_VERSION_CORE=$G_REMOTE_VERSION_CORE
 		G_DIETPI_VERSION_SUB=$G_REMOTE_VERSION_SUB
 		G_DIETPI_VERSION_RC=$G_REMOTE_VERSION_RC
 
-		G_EXEC_DESC='Copy DietPi scripts to /boot/dietpi' G_EXEC cp -a "DietPi-$G_GITBRANCH/dietpi" /boot/
-		G_EXEC_DESC='Copy DietPi system files in place' G_EXEC cp -a "DietPi-$G_GITBRANCH/rootfs/." /
-		G_EXEC_DESC='Clean download location' G_EXEC rm -R "DietPi-$G_GITBRANCH"
+		G_EXEC_DESC='Copy DietPi scripts to /boot/dietpi' G_EXEC cp -a "DietBanana-$G_GITBRANCH/dietpi" /boot/
+		G_EXEC_DESC='Copy DietPi system files in place' G_EXEC cp -a "DietBanana-$G_GITBRANCH/rootfs/." /
+		G_EXEC_DESC='Clean download location' G_EXEC rm -R "DietBanana-$G_GITBRANCH"
 
 		G_DIETPI-NOTIFY 2 'Storing DietPi version info:'
 		G_CONFIG_INJECT 'DEV_GITBRANCH=' "DEV_GITBRANCH=$G_GITBRANCH" /boot/dietpi.txt
