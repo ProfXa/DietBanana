@@ -4,7 +4,7 @@
 
 <pre><code>apt update</code></pre>
 <pre><code>apt install -y curl ca-certificates systemd-sysv</code></pre>
-<pre><code>bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/ProfXa/DietPi/master/.build/images/dietpi-installer')"
+<pre><code>bash -c "$(curl -sSfL 'https://raw.githubusercontent.com/ProfXa/DietBanana/master/.build/images/dietpi-installer')"
 </code></pre>
 
 
